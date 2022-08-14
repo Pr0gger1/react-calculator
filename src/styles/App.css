@@ -1,0 +1,191 @@
+@font-face {
+    font-family: "Silverfinster";
+    src: url("../fonts/Silverfinster.ttf");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Custom Font ttf 12h 3.0 for Paint";
+    src: url("../fonts/CustomFontTtf12H10.ttf");
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(240, 234, 234);
+}
+.container{
+    width: 50%;
+    background-color: #94d0eb;
+
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    box-shadow: 4px 5px #7ba8bb;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.display__expression{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #94d0eb;
+    height: 30%;
+}
+.operation__screen{
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    width: 35%;
+    height: 100%;
+    background-color: #7ba8bb;
+
+    color: #fff;
+    font-family: "Custom Font ttf 12h 3.0 for Paint", serif;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.display__result{
+    background-color: #94d0eb;
+    display: flex;
+    flex-direction: row;
+}
+.screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: transparent;
+    height: 100px;
+    margin: 10px;
+
+}
+.screen input[type="text"]{
+    border: 1px solid transparent;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    background-color: #7ba8bb;
+
+    box-shadow: inset -2px 5px #638696;
+    width: 90%;
+    height: 90%;
+    padding: 0 10px;
+    font-size: 2em;
+    font-family: "Custom Font ttf 12h 3.0 for Paint", serif;
+    color: #fff;
+
+}
+.screen input[type="text"]:focus{
+    border: none;
+    outline: none;
+}
+.screen input[type="text"]::placeholder{
+    color: #fff;
+}
+.screen button.delete{
+    position: relative;
+    top: 0;
+    background-color: #ff9d96;
+    box-shadow: 1px 5px #d17c7c;
+
+    transition: all ease .2s;
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    -ms-transition: all ease .2s;
+    -o-transition: all ease .2s;
+}
+.screen button.delete:hover{
+    background-color: #9e5d5d;
+    box-shadow: 1px 5px #6b3e3e;
+}
+.screen button.delete:active{
+    box-shadow: 0 0 #6b3e3e;
+    top: 4px;
+    transition: all ease .2s;
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    -ms-transition: all ease .2s;
+    -o-transition: all ease .2s;
+}
+.buttons{
+    background-color: #94d0eb;
+    margin: 10px;
+    padding: 10px;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.row{
+    background-color: #94d0eb;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.btn{
+    display: inline-block;
+    position: relative;
+    top: 0;
+
+    cursor: pointer;
+
+    width: 25%;
+    height: 50px;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+
+    margin: 0 10px 10px 0;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    box-shadow: 1px 5px #7ba8bb;
+    transition: all ease .2s;
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    -ms-transition: all ease .2s;
+    -o-transition: all ease .2s;
+}
+/*.clear{*/
+/*    width: 50%;*/
+/*}*/
+.buttons button.equal{
+    background-color: #f1ff92;
+    box-shadow: 1px 5px #798145;
+}
+.buttons button.operations{
+    background-color: #e7ddd4;
+}
+.buttons button.btn:hover{
+    background-color: #9c89f6;
+    box-shadow: 1px 5px #6b5ea9;
+}
+.buttons button.equal:hover{
+    background-color: #abb850;
+    box-shadow: 1px 5px #7b8439;
+}
+.buttons button.btn:active{
+    transition: all ease .2s;
+    -webkit-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    -ms-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    top: 4px;
+    box-shadow: 0 0 #7ba8bb;
+}
