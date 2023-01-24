@@ -1,54 +1,64 @@
-import React, {useState} from 'react';
-export const NumberContext = React.createContext();
+import React, {useState, createContext} from 'react';
+export const NumberContext = createContext({
+    number: '',
+    operation: '',
+    storedNumber: '',
+    setStoredNumber: () => {},
+    setNumber: () => {},
+    setOperation: () => {},
+    setDisplayValue: () => {},
+    setStoredValue: () => {},
+    clearDisplay: () => {},
+    deleteSymbol: () => {},
+    toggleNegative: () => {},
+    setOperationType: () => {},
+    solveProblem: () => {}
+});
 
-const NumberProvider = props => {
+const NumberProvider = ({ children }) => {
     const [number, setNumber] = useState('');
     const [storedNumber, setStoredNumber] = useState('');
     const [operation, setOperation] = useState('');
 
-    const SetDisplayValue = (num) => {
+    const setDisplayValue = (num) => {
         if (!number.includes('.') || num !== '.')
-        {
             setNumber(`${(number + num).replace(/^[0-9]0+/, '')}`);
-        }
     }
-    const SetStoredValue = () => {
+    const setStoredValue = () => {
         setStoredNumber(number);
         setNumber('');
     }
-    const SetOperationType = (type) => {
-        if (type === '√' && number.indexOf("√") === -1){
+    const setOperationType = (type) => {
+        if (type === '√' && !number.includes('√')){
             setOperation(type)
             setNumber(number + type)
         }
         if (number)
         {
             setOperation(type);
-            SetStoredValue();
+            setStoredValue();
         }
         if (storedNumber)
         {
             setOperation(type);
         }
     }
-    const ClearDisplay = () => {
+    const clearDisplay = () => {
         setNumber('');
         setOperation('');
         setStoredNumber('');
     }
-    const DeleteSymbol = () => {
+    const deleteSymbol = () => {
         if (number)
         {
             setNumber(number.slice(0, number.length - 1));
         }
     }
-    const ToggleNegative = () => {
+    const toggleNegative = () => {
         if (number)
-        {
             setNumber(`${parseInt(number) * (-1)}`)
-        }
     }
-    const SolveProblem = () => {
+    const solveProblem = () => {
         switch (operation){
             case '+':
                 setNumber(
@@ -60,20 +70,18 @@ const NumberProvider = props => {
                     `${(parseFloat(storedNumber) - parseFloat(number))}`
                 );
                 break;
-            case 'x':
+            case '*':
                 setNumber(
                     `${(parseFloat(storedNumber) * parseFloat(number))}`
                 );
                 break;
             case '/':
-                if (number === '0'){
+                if (!parseInt(number))
                     setNumber("Ошибка!");
-                }
-                else{
+                else
                     setNumber(
                         `${(parseFloat(storedNumber) / parseFloat(number))}`
                     );
-                }
                 break;
             case '√':
                 setNumber(
@@ -98,15 +106,15 @@ const NumberProvider = props => {
             setOperation,
             storedNumber,
             setStoredNumber,
-            SetDisplayValue,
-            SetStoredValue,
-            ClearDisplay,
-            DeleteSymbol,
-            ToggleNegative,
-            SetOperationType,
-            SolveProblem
+            setDisplayValue,
+            setStoredValue,
+            clearDisplay,
+            deleteSymbol,
+            toggleNegative,
+            setOperationType,
+            solveProblem
         }}>
-            {props.children}
+            {children}
         </NumberContext.Provider>
     );
 };
