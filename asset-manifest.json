@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-calculator/static/css/main.950a6178.css",
+    "main.js": "/react-calculator/static/js/main.1737ef96.js",
+    "static/media/CustomFontTtf12H10.ttf": "/react-calculator/static/media/CustomFontTtf12H10.028221923a56c83c3fa4.ttf",
+    "static/media/Silverfinster.ttf": "/react-calculator/static/media/Silverfinster.9b493a1d67ef4869a8e1.ttf",
+    "index.html": "/react-calculator/index.html",
+    "main.950a6178.css.map": "/react-calculator/static/css/main.950a6178.css.map",
+    "main.1737ef96.js.map": "/react-calculator/static/js/main.1737ef96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.950a6178.css",
+    "static/js/main.1737ef96.js"
+  ]
+}
